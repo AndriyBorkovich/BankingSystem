@@ -1,0 +1,71 @@
+﻿<Window
+    x:Class="Bankovní_Sýstem.Login"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Bankovní_Sýstem"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Login"
+    Width="400"
+    Height="350"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid Margin="0,10,10,0">
+        <ComboBox
+            Name="RoleComboBox"
+            Width="120"
+            Margin="0,80,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            <ComboBoxItem IsSelected="True">Admin</ComboBoxItem>
+            <ComboBoxItem>Agent</ComboBoxItem>
+        </ComboBox>
+        <TextBox
+            Name="UserNameBox"
+            Width="120"
+            Margin="0,144,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap"  />
+        <Label
+            Margin="0,10,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Bankovní managment system"
+            RenderTransformOrigin="0.441,-1.684" />
+        <Label
+            Margin="135,113,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Uživatelské Jméno" />
+        <Label
+            Margin="135,172,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Heslo"
+            RenderTransformOrigin="-3.503,0.021" />
+        <Button
+            Name="LoginButton"
+            Width="82"
+            Height="25"
+            Margin="0,248,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Click="LoginButton_Click"
+            Content="Přihlášení"
+            RenderTransformOrigin="-0.385,0.3" />
+        <PasswordBox
+            Name="UserPasswordBox"
+            Width="120"
+            Margin="0,198,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"/>
+        <Label
+            x:Name="RoleLabel"
+            Margin="135,49,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Role" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,199 @@
+﻿<Window
+    x:Class="Bankovní_Sýstem.NewAccountWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Bankovní_Sýstem"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="New account"
+    Width="1000"
+    Height="450"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
+    <Grid>
+        <Label
+            Margin="0,10,0,0"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"
+            Content="Formulář Nového Účtu" />
+        <Label
+            Margin="157,55,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Jméno"
+            RenderTransformOrigin="-0.29,0.368" />
+        <Label
+            Margin="319,55,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Telefonní číslo"
+            RenderTransformOrigin="1.04,0.502" />
+        <Label
+            Margin="511,55,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Adresa"
+            RenderTransformOrigin="-0.847,0.645" />
+        <Label
+            Margin="668,60,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Zaměstnání" />
+        <Label
+            Margin="152,108,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Vzdělání"
+            RenderTransformOrigin="0.54,0.051" />
+        <Label
+            Margin="337,109,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Pohlaví" />
+        <Label
+            Margin="682,117,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Content="Příjem"
+            RenderTransformOrigin="2.784,0.66" />
+        <TextBox
+            Name="NameBox"
+            Width="120"
+            Margin="119,85,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" TextChanged="NameBox_TextChanged" />
+        <ComboBox
+            Name="EducationComboBox"
+            Width="120"
+            Margin="119,140,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            RenderTransformOrigin="0.413,-0.102" SelectionChanged="EducationComboBox_SelectionChanged">
+            <ComboBoxItem IsSelected="True">Uneducated</ComboBoxItem>
+            <ComboBoxItem>Higher education</ComboBoxItem>
+        </ComboBox>
+        <TextBox
+            Name="PhoneNumberBox"
+            Width="120"
+            Margin="301,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" TextChanged="PhoneNumberBox_TextChanged" />
+        <ComboBox
+            Name="GenderComboBox"
+            Width="120"
+            Margin="301,137,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" SelectionChanged="GenderComboBox_SelectionChanged">
+            <ComboBoxItem IsSelected="True">Male</ComboBoxItem>
+            <ComboBoxItem>Female</ComboBoxItem>
+        </ComboBox>
+        <TextBox
+            Name="AdrressBox"
+            Width="120"
+            Height="80"
+            Margin="473,85,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" TextChanged="AdrressBox_TextChanged" />
+        <TextBox
+            Name="OccupationBox"
+            Width="120"
+            Margin="644,86,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" TextChanged="OccupationBox_TextChanged" />
+        <TextBox
+            Name="IncomeBox"
+            Width="120"
+            Margin="644,148,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            TextWrapping="Wrap" TextChanged="IncomeBox_TextChanged" />
+        <Button
+            Name="CreateAccountButton"
+            Width="76"
+            Margin="285,177,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="CreateAccountButton_Click"
+            Content="Odeslat" />
+        <Button
+            Name="EditAccountButton"
+            Width="76"
+            Margin="435,177,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="EditAccountButton_Click"
+            Content="Upravit" />
+        <Button
+            Name="DeleteAccountButton"
+            Width="75"
+            Margin="585,177,0,0"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="DeleteAccountButton_Click"
+            Content="Zrušit"
+            RenderTransformOrigin="1.352,-0.466" />
+        <DataGrid
+            Name="AccountsTable"
+            Margin="0,217,0,0"
+            AutoGenerateColumns="False"
+            CanUserAddRows="False"
+            CanUserDeleteRows="True"
+            FontSize="15"
+            FontStyle="Italic"
+            IsReadOnly="True"
+            SelectionChanged="AccountsTable_SelectionChanged"
+            VerticalScrollBarVisibility="Auto">
+            <DataGrid.Columns>
+                <DataGridTextColumn
+                    Width="50"
+                    Binding="{Binding Path=Id, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Id" />
+                <DataGridTextColumn
+                    Width="120"
+                    Binding="{Binding Path=Name, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Name" />
+                <DataGridTextColumn
+                    Width="150"
+                    Binding="{Binding Path=Phone, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Phone" />
+                <DataGridTextColumn
+                    Width="180"
+                    Binding="{Binding Path=Address, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Address" />
+                <DataGridTextColumn
+                    Width="70"
+                    Binding="{Binding Path=Gender, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Gender" />
+                <DataGridTextColumn
+                    Width="120"
+                    Binding="{Binding Path=Occupation, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Occupation" />
+                <DataGridTextColumn
+                    Width="120"
+                    Binding="{Binding Path=Education, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Education" />
+                <DataGridTextColumn
+                    Width="80"
+                    Binding="{Binding Path=Income, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Income" />
+                <DataGridTextColumn
+                    Width="*"
+                    Binding="{Binding Path=Balance, UpdateSourceTrigger=PropertyChanged}"
+                    Header="Balance" />
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button
+            x:Name="ExitButton"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Background="White"
+            BorderBrush="White"
+            Click="ExitButton_Click"
+            Content="&lt;--" />
+    </Grid>
+</Window>
